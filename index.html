@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila Play - Site Oficial</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #4facfe, #00f2fe);
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Introdução */
+        .intro {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .intro h1 {
+            font-size: 4em;
+            color: white;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+        .intro p {
+            font-size: 1.5em;
+            color: #f0f0f0;
+            margin-top: 10px;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Seção de Cards */
+        .cards-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1;
+            min-width: 250px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .card-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+        .card h2 {
+            font-size: 1.4em;
+            color: #4facfe;
+            margin: 10px 0;
+        }
+        .card-link {
+            display: inline-block;
+            background: #4facfe;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .card-link:hover {
+            background: #00f2fe;
+            color: #333;
+        }
+        /* Responsivo para Mobile */
+        @media (max-width: 768px) {
+            .cards-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .intro h1 {
+                font-size: 2.5em;
+            }
+            .intro p {
+                font-size: 1.2em;
+            }
+        }
+        /* Footer Simples */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Introdução -->
+        <section class="intro">
+            <h1>Vila Play</h1>
+            <p>Bem-vindo ao nosso projeto!</p>
+        </section>
+
+        <!-- Seção de Cards -->
+        <section class="cards-section">
+            <!-- Card 1: Apresentação -->
+            <div class="card">
+                <div class="card-icon">🏢</div>
+                <h2>“Apresentação da Vila Play”</h2>
+                <a href="https://docs.google.com/document/d/1dbIPUnDF7z-qm4G5wO_F5MHrhV1_joZ4/edit?usp=sharing&ouid=105392599834243950527&rtpof=true&sd=true" 
+                   target="_blank" class="card-link">Acessar Apresentação</a>
+            </div>
+
+            <!-- Card 2: Relatório -->
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h2>“Relatório da Vila Play”</h2>
+                <a href="https://docs.google.com/document/d/1Y5ETc-G_o7WVYUjPdfAltvMpIz0boMqo/edit?usp=sharing&ouid=105392599834243950527&rtpof=true&sd=true" 
+                   target="_blank" class="card-link">Acessar Relatório</a>
+            </div>
+
+            <!-- Card 3: Sistema de Ponto -->
+            <div class="card">
+                <div class="card-icon">⭐</div>
+                <h2>Sistema de Ponto</h2>
+                <a href="https://drive.google.com/file/d/1OjRDqf9lRPYiHSD0RKXZog7aIyAR9mEx/view?usp=sharing" 
+                   target="_blank" class="card-link">Acessar Sistema</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Vila Play. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Animação simples: Fade in dos cards ao carregar
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
