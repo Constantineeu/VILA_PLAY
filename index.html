@@ -111,6 +111,16 @@
             background: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
         }
+        .autores-box {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 10px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+            font-size: 1.1em;
+        }
     </style>
 </head>
 <body>
@@ -146,11 +156,22 @@
                 <a href="https://drive.google.com/file/d/1OjRDqf9lRPYiHSD0RKXZog7aIyAR9mEx/view?usp=sharing" 
                    target="_blank" class="card-link">Acessar Sistema</a>
             </div>
+
+            <!-- Card 4: Convite para Conhecer Nossa Empresa -->
+            <div class="card">
+                <div class="card-icon">📩</div>
+                <h2>“Convite para conhecer nossa empresa”</h2>
+                <a href="https://docs.google.com/document/d/1wO_3EkY9LI4ha_8pv73B3MKc95ymXC6B/edit?usp=sharing&ouid=105392599834243950527&rtpof=true&sd=true" 
+                   target="_blank" class="card-link">Acessar Convite</a>
+            </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2025 Vila Play. Todos os direitos reservados.</p>
+            <div class="autores-box">
+                Autores do projeto: Moisés, Bruno, Hugo, Vicente, Felipe, Pietro Renan, Caio, Pieto Carvalho, Giovanna, Vitoria.
+            </div>
+            <p id="copyright">&copy; 2023 Vila Play. Todos os direitos reservados.</p>
         </footer>
     </div>
 
@@ -167,6 +188,10 @@
                     card.style.transform = 'translateY(0)';
                 }, index * 200);
             });
+
+            // Atualiza o ano do copyright para o atual (dinâmico)
+            const currentYear = new Date().getFullYear();
+            document.getElementById('copyright').textContent = `&copy; ${currentYear} Vila Play. Todos os direitos reservados.`;
         });
     </script>
 </body>
